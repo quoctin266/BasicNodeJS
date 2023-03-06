@@ -4,12 +4,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        h1 {
+            background-color: rgb(3, 109, 17);
+            padding: 15px;
+            color: beige;
+        }
+        div {
+            padding-left: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h1><%=data.id%></h1>
-    <h1><%=data.firstName%></h1>
-    <h1><%=data.lastName%></h1>
-    <h1><%=data.email%></h1>
-    <h1><%=data.address%></h1>
+    <h1>User Detail</h1>
+    <div>
+        <h2>User ID: <%=data.id%></h2>
+        <h2>First name: <%=data.firstName%></h2>
+        <h2>Last name: <%=data.lastName%></h2>
+        <h2>Email: <%=data.email%></h2>
+        <h2>Address: <%=data.address%></h2>
+    </div>
 </body>
 </html>

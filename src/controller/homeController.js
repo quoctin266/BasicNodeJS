@@ -1,9 +1,14 @@
 import getConnection from "../configs/connectDB";
 
-let getHomepage = async (req, res) => {
+let getUserpage = async (req, res) => {
+  const searchValue = req.query.searchValue;
+
   const connection = await getConnection();
 
-  const [rows] = await connection.execute("SELECT * FROM `users`");
+  const [rows] = await connection.execute(
+    "SELECT * FROM `users` where `firstName` like ?",
+    ["%" + searchValue + "%"]
+  );
 
   res.render("index.ejs", { data: rows });
 };
@@ -24,6 +29,6 @@ let getDetailpage = async (req, res) => {
 };
 
 module.exports = {
-  getHomepage,
+  getUserpage,
   getDetailpage,
 };

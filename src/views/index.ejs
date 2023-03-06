@@ -16,6 +16,9 @@
 
       <div style="padding-left:16px;padding-right: 16px;">
         <h2>Users table</h2>
+        <% if (data.length === 0) {%>
+            <h2>No users found</h2>
+        <% } else { %>
         <table>
             <thead>
                 <tr>
@@ -26,7 +29,7 @@
                   </tr>
             </thead>
             <tbody>
-                <% for(let i=0; i < data.length; i++) { %>
+                   <% for(let i=0; i < data.length; i++) { %>
                     <tr>
                       <td><%= data[i].id %></td>
                       <td><%= data[i].firstName %></td>
@@ -40,6 +43,7 @@
                  <% } %>
             </tbody>
           </table>
+          <% } %>
       </div>
 </body>
 </html>
