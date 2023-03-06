@@ -44,4 +44,23 @@ body {
     background-color: #f2f2f2;
   }
   tr:hover {background-color: rgb(128, 126, 126);}
+
+  .register label{
+    display: inline-block;
+    width: 5%;
+    text-align: left;
+  }
+  .register {
+    margin-top: 3%;
+    display: none;
+  }
+
+  .register .btn-submit {
+    padding: 3px 30px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  .success {
+    text-align: center;
+  }
   

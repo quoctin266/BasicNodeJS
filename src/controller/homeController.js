@@ -28,7 +28,23 @@ let getDetailpage = async (req, res) => {
   res.render("detail.ejs", { data: data });
 };
 
+let createNewUser = async (req, res) => {
+  let firstName = req.body.firstName;
+  let lastName = req.body.lastName;
+  let email = req.body.email;
+  let address = req.body.address;
+
+  const connection = await getConnection();
+
+  await connection.execute(
+    "insert into users(firstName,lastName,email,address) values (?,?,?,?)",
+    [firstName, lastName, email, address]
+  );
+  let success = "Create new user successfully";
+  res.render("search.ejs", { success: success });
+};
 module.exports = {
   getUserpage,
   getDetailpage,
+  createNewUser,
 };

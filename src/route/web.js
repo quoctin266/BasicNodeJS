@@ -5,10 +5,12 @@ let router = express.Router();
 
 const initWebRoute = (app) => {
   router.get("/", (req, res) => {
-    res.render("search.ejs");
+    let success = null;
+    res.render("search.ejs", { success: success });
   });
   router.get("/user", homeController.getUserpage);
   router.get("/detail/user/:userId", homeController.getDetailpage);
+  router.post("/create-new-user", homeController.createNewUser);
   return app.use("/", router);
 };
 
