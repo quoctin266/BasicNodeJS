@@ -36,14 +36,21 @@
                       <td><%= data[i].lastName %></td>
                       <td>
                             <button type="button" onclick="window.open('/detail/user/<%= data[i].id %>');">Detail</button>
-                            <button type="button">Edit</button>
-                            <button type="button">Delete</button>
+                            <button type="button" onclick="window.open('/update-user/<%= data[i].id %>-<%= searchValue %>','_parent');">Edit</button>
+                            <form class="deleteBtn" action="/delete-user" method="POST">
+                              <input type="hidden" value="<%= searchValue %>" name="searchValue">
+                              <input type="hidden" value="<%= data[i].id %>" name="id">
+                              <button type="submit">Delete</button>
+                            </form>
                       </td>
                     </tr>
                  <% } %>
             </tbody>
           </table>
           <% } %>
+          <% if (success !== null) { %>
+            <h2 class="success"><%=success%></h2>
+        <% } %>
       </div>
 </body>
 </html>

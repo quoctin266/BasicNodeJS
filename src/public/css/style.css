@@ -45,7 +45,7 @@ body {
   }
   tr:hover {background-color: rgb(128, 126, 126);}
 
-  .register label{
+  .register label,.update label{
     display: inline-block;
     width: 5%;
     text-align: left;
@@ -55,12 +55,19 @@ body {
     display: none;
   }
 
-  .register .btn-submit {
+  .btn-submit {
     padding: 3px 30px;
     cursor: pointer;
     font-size: 1em;
   }
   .success {
     text-align: center;
+  }
+  .deleteBtn {
+    display: inline-block;
+  }
+  .update {
+    text-align: center;
+    margin-top: 5%;
   }
   
