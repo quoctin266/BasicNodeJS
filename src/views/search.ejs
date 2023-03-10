@@ -13,18 +13,16 @@
 </head>
 <body>
     <div class="topnav">
-        <a class="active" href="http://localhost:8080/">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a class="active" href="/">Home</a>
+        <a href="/upload">Upload</a>
       </div>
     <div>
         <h1>Enter search term</h1>
-        <form action="/user">
+        <form action="/user" onsubmit="return validate()">
             <label for="name">Name</label>
             <input type="text" name="searchValue" value="" id="name"/>
             <br> <br>
-            <input type="submit" value="Search"/>
+            <input type="submit" value="Search" />
             <input type="reset" value="Reset" />
             <button type="button" onclick="toggleRegister()" >Register</button>
         </form>
@@ -48,11 +46,18 @@
     </div>
     <script>
         let toggleRegister = () => {
-            var x = document.getElementsByClassName("register")[0];
+            let x = document.getElementsByClassName("register")[0];
             if (x.style.display === "none") {
                 x.style.display = "block";
             } else {
                 x.style.display = "none";
+            }
+        }
+        let validate = () => {
+            let x = document.getElementById("name").value;
+            if (x.trim() === "") {
+                alert("Please enter a search term.");
+                return false;
             }
         }
     </script>

@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Detail</title>
     <style>
         body {
@@ -13,14 +14,14 @@
             padding: 15px;
             color: beige;
         }
-        div {
+        .detail {
             padding-left: 40px;
         }
     </style>
 </head>
 <body>
     <h1>User Detail</h1>
-    <div>
+    <div class="detail">
         <h2>User ID: <%=data.id%></h2>
         <h2>First name: <%=data.firstName%></h2>
         <h2>Last name: <%=data.lastName%></h2>
